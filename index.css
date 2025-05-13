@@ -9,7 +9,7 @@ h1 {
 
 .champ {
     display: flex;
-    margin-left: 150px;
+    margin-left: 100px;
     flex-direction: column;
     width: 250px;
     
@@ -25,6 +25,37 @@ h1 {
     display: flex;
     height: 50px;
     width: 50px;
-    margin-left: 420px;
+    margin-left: 370px;
     margin-top: -50px;
+}
+.background {
+    display: flex;
+    background-color: rgb(195, 159, 159);
+    border-radius: 20px;
+    border-color: black;
+    height: 300px;
+    width: 1200px;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+
+.titre {
+    display: flex;
+    margin-top: 30px;
+    margin: -5px;
+    height: 50px;
+}
+#titre {
+    margin-top: 50px;
+    margin-left: 110px;
+    font-size: 20pt;
+
+}
+button {
+    background-color: green;
+    margin-left: 1080px;
+    height: 50px;
+    width: 120px;
+    border-radius: 10px;
 }
