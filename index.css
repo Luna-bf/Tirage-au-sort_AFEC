@@ -1,0 +1,30 @@
+body {
+    font-family: 'montserrat', sans-serif;
+}
+
+h1 {
+    margin-left: 500px;
+    font-size: 50pt;
+}
+
+.champ {
+    display: flex;
+    margin-left: 150px;
+    flex-direction: column;
+    width: 250px;
+    
+    
+}
+#champ {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 5px;
+}
+.valider {
+    display: flex;
+    height: 50px;
+    width: 50px;
+    margin-left: 420px;
+    margin-top: -50px;
+}
