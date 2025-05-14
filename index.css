@@ -106,6 +106,7 @@ footer {
     position: relative; 
 }
 .BG-img {
+    display: block;
     background-image: url("img/composition-abstraite-de-lumiere-ultraviolette-uv.png");
     background-size: cover;
     height: 250px;
@@ -162,4 +163,9 @@ a {
 
 a:visited {
     color: powderblue;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
 }
