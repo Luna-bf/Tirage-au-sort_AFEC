@@ -5,6 +5,10 @@ const elements = {
     form: document.querySelector(".champ"),
     input: document.getElementById('champ'),
     submitBtn: document.querySelector(".valider"),
+    mixNamesBtn: document.querySelector(".melanger"),
+    dialogBox: document.querySelector("#dialog-box"),
+    randomNameContainer: document.querySelector("#random-name"),
+    closeDialogBtn: document.querySelector("#close-dialog"),
 };
 
 //Le tableau qui va contenir la liste des prénoms
@@ -24,11 +28,23 @@ Cela signifie que mon code cause une boucle infinie, car la fonction s'éxécute
 addName(); //J'appelle ma fonction pour qu'elle s'exécute
 
 elements.submitBtn.addEventListener("click", (e) => {
-    e.preventDefault(); //J'empêche le rechargement de la page (comportement par défaut lorsqu'un formulaire est soumis)
+    e.preventDefault(); //J'empêche le rechargement de la page (comportement par défaut lorsqu'un bouton avec l'attribut "submit" est cliqué)
 
     //J'ajoute (push) la valeur saisie dans l'input dans le tableau names
     names.push(elements.input.value); //Je fais cela en allant chercher l'élément qui représente l'input, soit elements.input suivi de .value pour préciser que je veux avoir la valeur de cet input
     elements.input.value = ''; //Je vide le contenu de l'input une fois que la valeur de celui-ci est insérée dans le tableau names
     
     addName();
+});
+
+//Quand le bouton "Mélanger" est cliqué...
+elements.mixNamesBtn.addEventListener("click", () => {
+    elements.dialogBox.showModal(); //J'affiche la fenêtre modale
+    console.log("Dialog box open"); //Je peux aussi afficher du texte dans la console pour le confirmer
+});
+
+//Quand le bouton "Fermer" est cliqué...
+elements.closeDialogBtn.addEventListener("click", () => {
+    elements.dialogBox.close(); //Je fais disparaitre la fenêtre modale
+    console.log("Dialog box closed"); //J'affiche du texte dans la console pour le confirmer
 });
