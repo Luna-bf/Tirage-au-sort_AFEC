@@ -49,12 +49,14 @@ h1 {
 
 
 .titre {
+    
     display: flex;
     margin-top: 30px;
     margin: -5px;
     height: 50px;
 }
 #titre {
+    
     margin-top: 50px;
     margin-left: 110px;
     font-size: 20pt;
@@ -122,6 +124,10 @@ footer {
     position: absolute;
     bottom: 0;
     
+    
+}
+#texte {
+    text-shadow: 8px 8px 9px #000000;
 }
 
 h1, label, p {
