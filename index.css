@@ -1,6 +1,10 @@
 
 body {
     font-family: 'montserrat', sans-serif;
+    background-color: linear-gradient(top, rgb(48, 17, 111),rgb(17, 87, 111) );
+    height: 100%;
+    width: 100%;
+    
 }
 
 h1 {
