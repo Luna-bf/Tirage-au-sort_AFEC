@@ -6,10 +6,11 @@ html {
 body {
     font-family: 'montserrat', sans-serif;
     background: none;
+    margin-top: -25px;
 }
 
 h1 {
-    margin-left: 500px;
+    margin-left: 400px;
     font-size: 50pt;
 }
 
