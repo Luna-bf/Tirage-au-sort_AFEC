@@ -118,6 +118,35 @@ h1, label, p {
     color: #fff;
 }
 
+#container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+ul li {
+    padding-right: 8em;
+}
+
+dialog {
+    padding: 2em;
+    border: 4px inset green;
+}
+
+dialog div {
+    margin: 5px 0 20px 0;
+}
+
+#close-dialog {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 32px 10px 32px;
+    border: 1px solid green;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+}
+
 a {
     color: powderblue;
 }
