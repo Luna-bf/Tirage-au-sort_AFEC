@@ -102,16 +102,22 @@ h1 {
     border-radius: 20px;
 }
 footer {
+    
     height: 150px;
     background: rgb(75, 39, 118);
+    position: relative;
     
 }
 
 .adresse {
     display: flex;
-    margin-top: 100px;
+    margin-top: 200px;
+    margin-left: 350px;
     flex-direction: column;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    
 }
 
 h1, label, p {
@@ -124,4 +130,11 @@ a {
 
 a:visited {
     color: powderblue;
+}
+.BG-img {
+    border: none;
+    background-image: url("img/composition-abstraite-de-lumiere-ultraviolette-uv.png");
+    background-size: cover;
+    height: 150px;
+    margin-top: 100px;
 }
