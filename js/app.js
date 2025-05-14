@@ -14,18 +14,22 @@ const elements = {
 //Le tableau qui va contenir la liste des prénoms
 let names = [];
 
+sessionStorage.names = JSON.stringify(names);
+let storedNames = JSON.parse(sessionStorage.names);
+
 function addName() {
     //Je créé une variable qui va afficher les valeurs de mon tableau names et les convertir en HTML (name => `<li>${name}</li>`)
     let displayName = names.map(name => `<li>${name}</li>`).join('\n');
     elements.allNames.innerHTML = displayName;
+    
+    console.log(names.length);
 }
 
-/*
-Appeler addName() dans la fonction addName() cause l'erreur "Maximum call stack size exceeded".
-
-Cela signifie que mon code cause une boucle infinie, car la fonction s'éxécute puis se rappelle elle-même à l'infini (fonction récursive).
-*/
 addName(); //J'appelle ma fonction pour qu'elle s'exécute
+
+//Appeler addName() dans la fonction addName() cause l'erreur "Maximum call stack size exceeded".
+//Cela signifie que mon code cause une boucle infinie, car la fonction s'éxécute puis se rappelle elle-même à l'infini (fonction récursive).
+
 
 elements.submitBtn.addEventListener("click", (e) => {
     e.preventDefault(); //J'empêche le rechargement de la page (comportement par défaut lorsqu'un bouton avec l'attribut "submit" est cliqué)
@@ -37,8 +41,30 @@ elements.submitBtn.addEventListener("click", (e) => {
     addName();
 });
 
+let randomName = 0; //Ici la variable randomName est initialisée à zéro, elle contiendra le premier prénom choisi aléatoirement
+
+//lastRandom est initialisée à null, elle va garder la trace du prénom précédement sélectionné, afin d'être sûre qu'il ne se répète pas
+let lastRandom = null; //Je l'initialise à null au lieu de "undefined" car null est le choix typique pour signifier l'absence de valeur
+
+//Boite de dialogue
+function displayRandomName() {
+
+    do {
+        randomName = names[Math.floor(Math.random() * names.length)]; //Je déclare une nouvelle variable qui va choisir une valeur aléatoire dans le tableau names[] 
+    } while(randomName === lastRandom)
+    lastRandom = randomName;
+    elements.randomNameContainer.textContent = lastRandom; //J'affiche ensuite cette valeur dans la boite modale avec textContent (randomNameContainer)
+    
+    console.log(randomName); //(Optionnel) je fais un console.log
+}
+
+displayRandomName();
+
 //Quand le bouton "Mélanger" est cliqué...
 elements.mixNamesBtn.addEventListener("click", () => {
+    //J'appelle ma fonction displayRandomName (pour afficher une valeur aléatoire du tableau)
+    displayRandomName();
+
     elements.dialogBox.showModal(); //J'affiche la fenêtre modale
     console.log("Dialog box open"); //Je peux aussi afficher du texte dans la console pour le confirmer
 });
