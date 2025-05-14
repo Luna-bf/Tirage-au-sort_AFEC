@@ -7,10 +7,6 @@ body {
     font-family: 'montserrat', sans-serif;
     background: none;
 }
-.background-page {
-    
-    
-}
 
 h1 {
     margin-left: 500px;
@@ -22,8 +18,9 @@ h1 {
     margin-left: 100px;
     flex-direction: column;
     width: 250px;
-    
-    
+}
+#Prénoms {
+    font-size: 20pt;
 }
 #champ {
     height: 50px;
