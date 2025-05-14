@@ -1,6 +1,15 @@
-
+html {
+    background: linear-gradient(to bottom,  rgb(75, 39, 118),rgb(0, 0, 0) );
+    height: 100%;
+    width: 100%;
+}
 body {
     font-family: 'montserrat', sans-serif;
+    background: none;
+}
+.background-page {
+    
+    
 }
 
 h1 {
