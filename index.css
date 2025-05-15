@@ -138,10 +138,12 @@ h1, label, p {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    padding: 1em;
+    margin-left: 10px;
 }
 
 ul li {
-    padding-right: 8em;
+    padding-right: 5em;
 }
 
 dialog {
