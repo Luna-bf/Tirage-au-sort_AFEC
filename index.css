@@ -65,7 +65,7 @@ h1 {
 .créer {
     display: flex;
     background-color: green;
-    margin-left: 1100px;
+    margin-left: 830px;
     margin-top: 15px;
     height: 70px;
     width: 170px;
@@ -73,6 +73,7 @@ h1 {
     border-color: black;
     font-size: 15pt;
     align-items: center;
+    justify-content: center;
 
 }
 .melanger {
@@ -90,19 +91,19 @@ h1 {
     display: flex;
 }
 
-.titre2 {
+/* .titre2 {
     margin-top: -430px;
     margin-left: 1100px;
     font-size: 20pt;
-}
-.groupes {
+} */
+/* .groupes {
     background-color: rgb(116, 116, 116);
     height: 300px;
     width: 300px;
     margin-left: 1030px;
     margin-top: 15px;
     border-radius: 20px;
-}
+} */
 footer {
     height: 250px;
     position: relative; 
