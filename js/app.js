@@ -5,17 +5,12 @@ const elements = {
     form: document.querySelector(".champ"),
     input: document.getElementById('champ'),
     submitBtn: document.querySelector(".valider"),
-    mixNamesBtn: document.querySelector(".melanger"),
-    dialogBox: document.querySelector("#dialog-box"),
+    mixNamesBtn: document.querySelector(".créer"),
     randomNameContainer: document.querySelector("#random-name"),
-    closeDialogBtn: document.querySelector("#close-dialog"),
 };
 
 //Le tableau qui va contenir la liste des prénoms
 let names = [];
-
-sessionStorage.names = JSON.stringify(names);
-let storedNames = JSON.parse(sessionStorage.names);
 
 function addName() {
     //Je créé une variable qui va afficher les valeurs de mon tableau names et les convertir en HTML (name => `<li>${name}</li>`)
@@ -60,17 +55,23 @@ function displayRandomName() {
 
 displayRandomName();
 
+
 //Quand le bouton "Mélanger" est cliqué...
 elements.mixNamesBtn.addEventListener("click", () => {
     //J'appelle ma fonction displayRandomName (pour afficher une valeur aléatoire du tableau)
     displayRandomName();
+    
+    shuffle(names);
+    console.log(names);
+    
+    function shuffle(array){
+        for(let i = array.length - 1; i > 0; i--){
+            const random = Math.floor(Math.random() * (i + 1));
+            
+            [array[i], array[random]] = [array[random], array[i]];
+        }
+    }
 
-    elements.dialogBox.showModal(); //J'affiche la fenêtre modale
-    console.log("Dialog box open"); //Je peux aussi afficher du texte dans la console pour le confirmer
-});
-
-//Quand le bouton "Fermer" est cliqué...
-elements.closeDialogBtn.addEventListener("click", () => {
-    elements.dialogBox.close(); //Je fais disparaitre la fenêtre modale
-    console.log("Dialog box closed"); //J'affiche du texte dans la console pour le confirmer
+    let displayShuffledArray = names.map(name => `<li>${name}</li>`).join('\n');
+    elements.allNames.innerHTML = displayShuffledArray;
 });
